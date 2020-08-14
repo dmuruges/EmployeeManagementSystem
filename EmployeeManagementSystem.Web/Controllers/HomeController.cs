@@ -23,6 +23,14 @@ namespace EmployeeManagementSystem.Web.Controllers
             return View(model);
         }
 
+        public ViewResult Details()
+        {
+            Employee model = _employeeRepository.GetEmployee(1);
+            ViewBag.PageTitle = "Employee Details";
+
+            return View(model);
+        }
+
     }
 
 }

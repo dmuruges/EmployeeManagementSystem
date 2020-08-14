@@ -1,0 +1,18 @@
+﻿@model EmployeeManagementSystem.Web.Models.Employee
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Employee Details";
+}
+
+<h3>@ViewBag.PageTitle</h3>
+
+<div>
+    Name: @Model.Name
+</div>
+<div>
+    Email: @Model.Email
+</div>
+<div>
+    Department: @Model.Department
+</div>
