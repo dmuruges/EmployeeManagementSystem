@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using EmployeeManagementSystem.Web.Models;
 using EmployeeManagementSystem.Web.Repositories.Interfaces;
+using EmployeeManagementSystem.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeManagementSystem.Web.Controllers
@@ -25,11 +26,15 @@ namespace EmployeeManagementSystem.Web.Controllers
 
         public ViewResult Details()
         {
-            Employee model = _employeeRepository.GetEmployee(1);
-            ViewBag.PageTitle = "Employee Details";
+            HomeDetailsViewModel homeDetailsViewModel = new HomeDetailsViewModel()
+            {
+                Employee = _employeeRepository.GetEmployee(1),
+                PageTitle = "Employee Details"
+            };
 
-            return View(model);
+            return View(homeDetailsViewModel);
         }
+
 
     }
 
