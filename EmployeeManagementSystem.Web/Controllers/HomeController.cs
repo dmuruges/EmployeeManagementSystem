@@ -9,24 +9,26 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeManagementSystem.Web.Controllers
 {
+    [Route("Home")]
     public class HomeController : Controller
     {
         private readonly IEmployeeRepository _employeeRepository;
-
+        
         public HomeController(IEmployeeRepository employeeRepository)
         {
             _employeeRepository = employeeRepository;
         }
+
+        [Route("~/")]
         [Route("")]
-        [Route("Home")]
-        [Route("Home/Index")]
+        [Route("Index")]
         public ViewResult Index()
         {
             var model = _employeeRepository.GetAllEmployee();
             return View(model);
         }
 
-        [Route("Home/Details/{id?}")]
+        [Route("Details/{id?}")]
         public ViewResult Details(int? id)
         {
             HomeDetailsViewModel homeDetailsViewModel = new HomeDetailsViewModel()
