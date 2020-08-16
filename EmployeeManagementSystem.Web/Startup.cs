@@ -45,7 +45,7 @@ namespace EmployeeManagementSystem.Web
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "gravitas/{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
 
         }
