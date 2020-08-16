@@ -35,7 +35,9 @@ namespace EmployeeManagementSystem.Web.Controllers
             return View(homeDetailsViewModel);
         }
 
-
+        public ViewResult Create()
+        {
+            return View();
+        }
     }
-
 }
